@@ -1,8 +1,8 @@
-01-intro.js
-02-globals.js
-03-modules.js
-04-names.js
-05-utils.js
-06-alternative-flavor.js
-07-mind-grenade.js
-content/
+const num1 = 5
+const num2 = 10
+
+function addValues() {
+  console.log(`the sum is : ${num1 + num2}`)
+}
+
+addValues()

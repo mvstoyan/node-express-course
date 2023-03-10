@@ -1,11 +1,12 @@
-01-intro.js
-02-globals.js
-03-modules.js
-04-names.js
-05-utils.js
-06-alternative-flavor.js
-07-mind-grenade.js
-08-os-module.js
-09-path-module.js
-10-fs-sync.js
-content/
+const { readFileSync, writeFileSync } = require('fs')
+console.log('start');
+const first = readFileSync('./content/first.txt', 'utf8')
+const second = readFileSync('./content/second.txt', 'utf8')
+
+writeFileSync(
+    './content/result-sync.txt', 
+    `Here is the result : ${first}, ${second}`, 
+    {flag: 'a'}
+)
+console.log('done with this task');
+console.log('starting the next one');

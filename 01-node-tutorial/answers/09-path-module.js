@@ -1,10 +1,12 @@
-01-intro.js
-02-globals.js
-03-modules.js
-04-names.js
-05-utils.js
-06-alternative-flavor.js
-07-mind-grenade.js
-08-os-module.js
-09-path-module.js
-content/
+const path = require('path')
+
+console.log(path.sep)
+
+const filePath = path.join('/content/', 'subfolder', 'test.txt')
+console.log(filePath)
+
+const base = path.basename(filePath)
+console.log(base)
+
+const absolute = path.resolve(__dirname, 'content', 'subfolder', 'test.txt')
+console.log(absolute)

@@ -1,5 +1,7 @@
-01-intro.js
-02-globals.js
-03-modules.js
-04-names.js
-content/
+// local
+const secret = 'SUPER SECRET'
+// share
+const john = 'john'
+const peter = 'peter'
+
+module.exports = { john, peter }
