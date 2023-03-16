@@ -1,7 +1,6 @@
-01-intro.js
-02-globals.js
-03-modules.js
-04-names.js
-05-utils.js
-06-alternative-flavor.js
-content/
+module.exports.items = ['item1', 'item2']
+const person = {
+  name: 'bob',
+}
+
+module.exports.singlePerson = person
