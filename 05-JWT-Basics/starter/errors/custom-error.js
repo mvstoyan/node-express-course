@@ -1,8 +1,10 @@
 class CustomAPIError extends Error {
-  constructor(message, statusCode) {
+  constructor(message) {
     super(message)
-    this.statusCode = statusCode
   }
 }
 
 module.exports = CustomAPIError
+
+// This code can be used as a base class to create other custom 
+// error classes that inherit the properties and methods of the CustomAPIError class. 
