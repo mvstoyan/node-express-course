@@ -1,22 +1,20 @@
 // console.log('Task Manager App')
-// Ответить на вопросы в документе qiuzAnswers.txt
-// Ответить на вопросы mindset
-// do i need install new mongoose?
 
 const express = require('express');
 const app = express();
 const tasks = require('./routes/tasks')
 const connectDB = require('./db/connect') //you can check the correct access to db
 require('dotenv').config()
+const notFound = require('./middleware/non-found');
+const errorHandlerMiddleware = require('./middleware/error-handler');
 
 
 //middleware
+app.use(express.static('./public'))
 app.use(express.json())
 
 //routes
-app.get('/hello', (req, res) =>{
-    res.send('Task Manager App')
-})
+
 
 app.use('/api/v1/tasks', tasks)
 
@@ -26,8 +24,9 @@ app.use('/api/v1/tasks', tasks)
 //app.patch('/api/v1/tasks/:id')  - update task
 //app.delete('/api/v1/tasks/:id') - delete task
 
-
-const port = 3000
+app.use(notFound);
+app.use(errorHandlerMiddleware);
+const port = process.env.PORT || 3000
 
 const start = async () => {
     try {
